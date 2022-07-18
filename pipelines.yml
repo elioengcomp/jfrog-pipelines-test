@@ -1,0 +1,26 @@
+resources:
+  - name: my_public_fork_git_repo
+    type: GitRepo
+    configuration:
+      gitProvider: my_github
+      path: elioengcomp/jfrog-pipelines-test
+      branches:
+        include: {{gitBranch}}
+      buildOn:
+        commit: true
+        pullRequestCreate: true
+
+pipelines:
+  - name: test_public_fork
+    steps:
+      - name: test_public_fork
+        type: Bash
+        configuration:
+          inputResources:
+            - name: my_public_fork_git_repo
+        execution:
+          onExecute:
+            - printenv
+            - pushd ${res_my_public_fork_git_repo_resourcePath}
+            - cat ./resources/content.txt
+            - popd
