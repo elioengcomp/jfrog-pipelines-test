@@ -23,5 +23,6 @@ pipelines:
             - printenv
             - pushd ${res_my_public_fork_git_repo_resourcePath}
             - cat ./resources/content.txt
+            - echo 'my feature pipeline change!'
             - popd
             - update_commit_status my_public_fork_git_repo --status success --message 'build is done'
