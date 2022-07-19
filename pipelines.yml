@@ -24,3 +24,4 @@ pipelines:
             - pushd ${res_my_public_fork_git_repo_resourcePath}
             - cat ./resources/content.txt
             - popd
+            - update_commit_status my_public_fork_git_repo --status done --message 'build is done'
