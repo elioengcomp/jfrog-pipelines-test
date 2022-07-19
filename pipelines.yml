@@ -9,6 +9,7 @@ resources:
       buildOn:
         commit: true
         pullRequestCreate: true
+      cloneProtocol: https
 
 pipelines:
   - name: test_public_fork
