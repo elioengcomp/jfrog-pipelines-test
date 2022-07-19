@@ -13,7 +13,7 @@ resources:
 pipelines:
   - name: test_public_fork
     steps:
-      - name: test_public_fork
+      - name: build
         type: Bash
         configuration:
           inputResources:
