@@ -26,3 +26,14 @@ pipelines:
             - cat ./resources/content.txt
             - popd
             - update_commit_status my_public_fork_git_repo --status success --message 'build is done'
+
+  - name: test_step_with_integration
+    steps:
+      - name: build
+        type: Bash
+        configuration:
+          integrations:
+            - name: my_github
+        execution:
+          onExecute:
+            - printenv
