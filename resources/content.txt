@@ -1,1 +1,1 @@
-elioengcomp/jfrog-pipelines-test main
+elioengcomp/jfrog-pipelines-test main 4
