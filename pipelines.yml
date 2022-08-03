@@ -19,6 +19,8 @@ pipelines:
         configuration:
           inputResources:
             - name: my_public_fork_git_repo
+          integrations:
+            - name: my_art
         execution:
           onExecute:
             - printenv
