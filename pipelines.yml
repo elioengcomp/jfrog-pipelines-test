@@ -21,6 +21,7 @@ pipelines:
             - name: my_public_fork_git_repo
           integrations:
             - name: my_art
+            - name: my_k8s
         execution:
           onExecute:
             - printenv
@@ -36,6 +37,7 @@ pipelines:
             - name: my_public_fork_git_repo
           integrations:
             - name: my_art
+            - name: my_k8s
           sourceLocation: resources/go_project
           resolverRepo: test-go
           goCommand: test -v
