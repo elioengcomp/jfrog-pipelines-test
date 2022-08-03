@@ -29,6 +29,17 @@ pipelines:
             - popd
             - update_commit_status my_public_fork_git_repo --status success --message 'build is done'
 
+      - name: buid_go_project
+        type: GoBuild
+        configuration:
+          inputResources:
+            - name: my_public_fork_git_repo
+          integrations:
+            - name: my_art
+          sourceLocation: resources/go_project
+          resolverRepo: test-go
+          goCommand: test -v
+
   - name: test_step_with_integration
     steps:
       - name: build
