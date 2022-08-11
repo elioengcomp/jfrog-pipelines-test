@@ -62,9 +62,8 @@ pipelines:
           inputResources:
             - name: my_public_fork_git_repo
           integrations:
-            - name: my_art
             - name: my_k8s
         execution:
           onExecute:
             - "dir env:"
-            - update_commit_status my_public_fork_git_repo --status success --message 'build is done'
+            - update_commit_status my_public_fork_git_repo -status 'success' -message 'build is done'
