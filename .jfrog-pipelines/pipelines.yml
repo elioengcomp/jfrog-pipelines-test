@@ -25,9 +25,6 @@ pipelines:
         execution:
           onExecute:
             - printenv
-            - pushd ${res_my_public_fork_git_repo_resourcePath}
-            - cat ./resources/content.txt
-            - popd
             - update_commit_status my_public_fork_git_repo --status success --message 'build is done'
 
       - name: buid_go_project
